@@ -1,3 +1,14 @@
+
+# 2048 - About my fork
+I really like the game and I made its 7826's fork. My changes are really small but I think that when you get closer to 2048, tiles must became greaner, not to be only yellow after reaching 128. 
+
+Here is a screenshot with my preferences for the game and of course it's online and you can play it [here](http://valkirilov.github.io/2048/). And of course I should be thankfull to [Gabriele Cirulli](https://github.com/gabrielecirulli) who entertain the world with his work.
+<p align="center">
+  <img src="http://s9.postimg.org/dzsdbqji7/Screenshot_from_2014_05_14_18_18_11.png" alt="Screenshot"/>
+</p>
+
+And below is the original READMe from the creator :)
+
 # 2048
 A small clone of [1024](https://play.google.com/store/apps/details?id=com.veewo.a1024), based on [Saming's 2048](http://saming.fr/p/2048/) (also a clone).
 
