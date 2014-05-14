@@ -344,9 +344,9 @@ hr {
                    #ff0000 true, // 64
                    false true, // 128
                    false true, // 256
-                   false true, // 512
-                   false true, // 1024
-                   false true; // 2048
+                   #b9d461 true, // 512
+                   #8fc170 true, // 1024
+                   #25a81b true; // 2048
 
   // Build tile colors
   @while $exponent <= $limit {
