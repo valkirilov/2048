@@ -5,6 +5,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.actuator       = new Actuator;
 
   this.startTiles     = 2;
+  var self = this;
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
@@ -16,7 +17,6 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.playerNameField = document.getElementById('name-score');
   this.playerNameField.value = this.name;
   var button = document.getElementById('save-score');
-  var self = this;
   button.addEventListener('click', function() { self.saveScore(); }, true);
     
   this.setup();
