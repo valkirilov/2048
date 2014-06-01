@@ -10,11 +10,20 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
 
+  this.highscores = new HighScores();
+  this.name = $.cookie('name') || 'Player';
+    
+  this.playerNameField = document.getElementById('name-score');
+  this.playerNameField.value = this.name;
+  var button = document.getElementById('save-score');
+  var self = this;
+  button.addEventListener('click', function() { self.saveScore(); }, false);
+    
   this.setup();
 }
 
 // Restart the game
-GameManager.prototype.restart = function () {
+GameManager.prototype.restart = function () {    
   this.storageManager.clearGameState();
   this.actuator.continueGame(); // Clear the game won/lost message
   this.setup();
@@ -53,6 +62,7 @@ GameManager.prototype.setup = function () {
     // Add the initial tiles
     this.addStartTiles();
   }
+  this.highscores.showScores();
 
   // Update the actuator
   this.actuate();
@@ -269,4 +279,14 @@ GameManager.prototype.tileMatchesAvailable = function () {
 
 GameManager.prototype.positionsEqual = function (first, second) {
   return first.x === second.x && first.y === second.y;
+};
+
+GameManager.prototype.saveScore = function() {
+    var name = this.playerNameField.value;
+    
+    this.name = name;
+    $.cookie('name', name, { expires: 365 });
+    
+    this.highscores.saveScore(this.name, this.score);
+    this.restart();
 };

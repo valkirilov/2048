@@ -177,11 +177,11 @@ hr {
       font-weight: bold;
       height: 60px;
       line-height: 60px;
-      margin-top: 222px; }
+      margin-top: 128px; }
     .game-container .game-message .lower {
       display: block;
       margin-top: 59px; }
-    .game-container .game-message a {
+    .game-container .game-message a, .game-container .game-message .btn {
       display: inline-block;
       background: #8f7a66;
       border-radius: 3px;
@@ -190,8 +190,12 @@ hr {
       color: #f9f6f2;
       height: 40px;
       line-height: 42px;
-      margin-left: 9px; }
-      .game-container .game-message a.keep-playing-button {
+      margin-left: 9px;
+      border: none;
+      border-radius: 3px;
+      font-size: 1em;
+      font-weight: bold; }
+      .game-container .game-message a.keep-playing-button, .game-container .game-message .btn.keep-playing-button {
         display: none; }
     .game-container .game-message.game-won {
       background: rgba(237, 194, 46, 0.5);
@@ -200,6 +204,16 @@ hr {
         display: inline-block; }
     .game-container .game-message.game-won, .game-container .game-message.game-over {
       display: block; }
+    .game-container .game-message input {
+      background: #bbada0;
+      width: 150px;
+      height: 32px;
+      padding: 5px 25px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 1em;
+      color: #f9f6f2; }
 
 .grid-container {
   position: absolute;
@@ -576,11 +590,11 @@ hr {
         font-weight: bold;
         height: 60px;
         line-height: 60px;
-        margin-top: 222px; }
+        margin-top: 128px; }
       .game-container .game-message .lower {
         display: block;
         margin-top: 59px; }
-      .game-container .game-message a {
+      .game-container .game-message a, .game-container .game-message .btn {
         display: inline-block;
         background: #8f7a66;
         border-radius: 3px;
@@ -589,8 +603,12 @@ hr {
         color: #f9f6f2;
         height: 40px;
         line-height: 42px;
-        margin-left: 9px; }
-        .game-container .game-message a.keep-playing-button {
+        margin-left: 9px;
+        border: none;
+        border-radius: 3px;
+        font-size: 1em;
+        font-weight: bold; }
+        .game-container .game-message a.keep-playing-button, .game-container .game-message .btn.keep-playing-button {
           display: none; }
       .game-container .game-message.game-won {
         background: rgba(237, 194, 46, 0.5);
@@ -599,6 +617,16 @@ hr {
           display: inline-block; }
       .game-container .game-message.game-won, .game-container .game-message.game-over {
         display: block; }
+      .game-container .game-message input {
+        background: #bbada0;
+        width: 150px;
+        height: 32px;
+        padding: 5px 25px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 1em;
+        color: #f9f6f2; }
 
   .grid-container {
     position: absolute;
@@ -706,3 +734,24 @@ hr {
     margin-top: 90px !important; }
   .game-message .lower {
     margin-top: 30px !important; } }
+.game-highscores table {
+  width: 100%;
+  background: #bbada0;
+  border-spacing: 15px;
+  border-collapse: separate;
+  border-radius: 10px; }
+  .game-highscores table thead td {
+    background: #bbada0;
+    color: #4e423e;
+    font-weight: bold; }
+  .game-highscores table td {
+    height: 32px;
+    background: #ccc0b3;
+    border-radius: 3px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center; }
+  .game-highscores table tr.mine td {
+    background: #9f8a77;
+    color: #dbd9ce;
+    font-weight: bold; }
