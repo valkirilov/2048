@@ -93,7 +93,8 @@ KeyboardInputManager.prototype.listen = function () {
       touchStartClientY = event.touches[0].clientY;
     }
 
-    event.preventDefault();
+    // NOT SURE, CAUTION!
+    //event.preventDefault();
   });
 
   gameContainer.addEventListener(this.eventTouchmove, function (event) {

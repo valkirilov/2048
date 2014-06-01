@@ -18,6 +18,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.playerNameField.value = this.name;
   var button = document.getElementById('save-score');
   button.addEventListener('click', function() { self.saveScore(); }, true);
+  button.addEventListener('touchstart', function() { self.saveScore(); }, true);
     
   this.setup();
 }
@@ -283,7 +284,6 @@ GameManager.prototype.positionsEqual = function (first, second) {
 
 GameManager.prototype.saveScore = function() {
     var name = this.playerNameField.value;
-    
     this.name = name;
     $.cookie('name', name, { expires: 365 });
     

@@ -163,7 +163,7 @@ hr {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(238, 228, 218, 0.5);
+    background: rgba(238, 228, 218, 0.8);
     z-index: 1000;
     text-align: center;
     -webkit-animation: fade-in 800ms ease 1200ms;
@@ -580,7 +580,7 @@ hr {
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba(238, 228, 218, 0.5);
+      background: rgba(238, 228, 218, 0.8);
       z-index: 1000;
       text-align: center;
       -webkit-animation: fade-in 800ms ease 1200ms;
