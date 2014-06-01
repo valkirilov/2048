@@ -1,7 +1,7 @@
 function HighScores() {
 
-    this.uid = 'p0000001389';
-    this.authcode = '-';
+    this.uid = 's0000001389';
+    this.authcode = '3tYRfBS5IdZtQGfzAL8rANVpzDSyPjcvmWgXLUFkZd2sA1nsN5';
     this.rdb = new SQLEngine(this.uid, this.authcode, 'www.rdbhost.com');
     
     this.latestId;

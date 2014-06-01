@@ -17,7 +17,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.playerNameField.value = this.name;
   var button = document.getElementById('save-score');
   var self = this;
-  button.addEventListener('click', function() { self.saveScore(); }, false);
+  button.addEventListener('click', function() { self.saveScore(); }, true);
     
   this.setup();
 }

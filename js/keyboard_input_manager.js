@@ -73,6 +73,7 @@ KeyboardInputManager.prototype.listen = function () {
   this.bindButtonPress(".retry-button", this.restart);
   this.bindButtonPress(".restart-button", this.restart);
   this.bindButtonPress(".keep-playing-button", this.keepPlaying);
+  this.bindButtonPress("#save-score", this.saveScore);
 
   // Respond to swipe events
   var touchStartClientX, touchStartClientY;
@@ -136,6 +137,13 @@ KeyboardInputManager.prototype.restart = function (event) {
 KeyboardInputManager.prototype.keepPlaying = function (event) {
   event.preventDefault();
   this.emit("keepPlaying");
+};
+
+KeyboardInputManager.prototype.saveScore = function (event) {
+    console.log('Save the score');
+    event.preventDefault();
+    event.stopPropagation();
+    this.emit("saveScore");
 };
 
 KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {

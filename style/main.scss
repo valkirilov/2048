@@ -202,7 +202,7 @@ hr {
       bottom: 0;
       left: 0;
       background: rgba($tile-color, .5);
-      z-index: 100;
+      z-index: 1000;
 
       text-align: center;
 
@@ -235,6 +235,10 @@ hr {
 	  display: none;
 	}
       }
+        
+      .save-score {
+          background: #ad6128;
+      }
 
       @include animation(fade-in 800ms ease $transition-speed * 12);
       @include animation-fill-mode(both);
@@ -261,6 +265,9 @@ hr {
         margin-bottom: 10px;
         border: none;
         border-radius: 3px;
+          
+        position: relative;
+        z-index: 2500;
  
         font-size: 1em;
         color: $bright-text-color;
