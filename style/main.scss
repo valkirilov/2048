@@ -211,7 +211,7 @@ hr {
         font-weight: bold;
         height: 60px;
         line-height: 60px;
-        margin-top: 222px;
+        margin-top: 128px;
         // height: $field-width;
         // line-height: $field-width;
       }
@@ -221,10 +221,15 @@ hr {
         margin-top: 59px;
       }
 
-      a {
+      a, .btn {
         @include button;
         margin-left: 9px;
         // margin-top: 59px;
+          
+        border: none;
+        border-radius: 3px;
+        font-size: 1em;
+        font-weight: bold;
 
 	&.keep-playing-button {
 	  display: none;
@@ -245,6 +250,20 @@ hr {
 
       &.game-won, &.game-over {
         display: block;
+      }
+        
+      input {
+        background: $game-container-background;
+        width: 150px;
+        height: 32px;
+      
+        padding: 5px 25px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 3px;
+ 
+        font-size: 1em;
+        color: $bright-text-color;
       }
     }
   }
@@ -543,7 +562,46 @@ hr {
     }
 
     .lower {
-      margin-top: 30px !important;
+        margin-top: 30px !important;
     }
   }
+}
+
+.game-highscores {
+    
+    table {
+        width: 100%;
+        background: $game-container-background;
+        
+        border-spacing: 15px;
+        border-collapse: separate;
+        border-radius: 10px;
+        
+        thead {
+            
+          td {
+            background: $game-container-background;
+            color: #4e423e;
+            font-weight: bold;
+          }
+        }
+        
+        td {
+            height: 32px;
+            
+            background: #ccc0b3;
+            border-radius: 3px;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        
+        tr.mine {
+          td {
+            background: #9f8a77;
+            color: #dbd9ce;
+            font-weight: bold;
+          }
+        }
+    }
 }
