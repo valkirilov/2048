@@ -73,7 +73,11 @@ KeyboardInputManager.prototype.listen = function () {
   this.bindButtonPress(".retry-button", this.restart);
   this.bindButtonPress(".restart-button", this.restart);
   this.bindButtonPress(".keep-playing-button", this.keepPlaying);
+<<<<<<< HEAD
+  this.bindButtonPress(".save-score", this.saveScore);
+=======
   this.bindButtonPress("#save-score", this.saveScore);
+>>>>>>> master
 
   // Respond to swipe events
   var touchStartClientX, touchStartClientY;
@@ -93,7 +97,8 @@ KeyboardInputManager.prototype.listen = function () {
       touchStartClientY = event.touches[0].clientY;
     }
 
-    event.preventDefault();
+    // NOT SURE, CAUTION!
+    //event.preventDefault();
   });
 
   gameContainer.addEventListener(this.eventTouchmove, function (event) {
@@ -142,7 +147,11 @@ KeyboardInputManager.prototype.keepPlaying = function (event) {
 KeyboardInputManager.prototype.saveScore = function (event) {
     console.log('Save the score');
     event.preventDefault();
+<<<<<<< HEAD
+    //event.stopPropagation();
+=======
     event.stopPropagation();
+>>>>>>> master
     this.emit("saveScore");
 };
 
