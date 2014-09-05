@@ -25,15 +25,31 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     self.updateBestScore(metadata.bestScore);
 
     if (metadata.terminated) {
+      
       if (metadata.over) {
         self.message(false); // You lose
       } else if (metadata.won) {
         self.message(true); // You win!
       }
+        
+      self.saveScore(metadata);
     }
 
   });
 };
+
+HTMLActuator.prototype.saveScore = function(metadata) {
+    // Save the score
+    console.log(userRef);
+    if (userRef) {
+        console.log('Saving score');
+        var oldXp = parseInt(userRef.xp);
+        var newXp = parseInt(metadata.score) + oldXp;
+        var ref = new Firebase('https://valkirilov-2048.firebaseio.com/users/'+userProfile.uid);
+        ref.update({ "xp": newXp });
+        showXp(newXp);
+    }
+}
 
 // Continues the game (both restart and keep playing)
 HTMLActuator.prototype.continueGame = function () {

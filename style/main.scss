@@ -16,8 +16,9 @@ $tile-color: #eee4da;
 $tile-gold-color: #edc22e;
 $tile-gold-glow-color: lighten($tile-gold-color, 15%);
 
-$game-container-margin-top: 40px;
+$game-container-margin-top: 80px;
 $game-container-background: #bbada0;
+$navbar-hover-background: lighten($game-container-background, 15%);
 
 $transition-speed: 100ms;
 
@@ -32,7 +33,7 @@ html, body {
 }
 
 body {
-  margin: 80px 0;
+  margin: 20px 0 80px 0;
 }
 
 .heading {
@@ -60,8 +61,12 @@ h1.title {
 }
 
 .scores-container {
+  width: $field-width;
+    
   float: right;
   text-align: right;
+    
+  margin-bottom: 30px;
 }
 
 .score-container, .best-container {
@@ -272,6 +277,23 @@ hr {
         font-size: 1em;
         color: $bright-text-color;
       }
+      input.lg {
+        width: 60%;      
+      }
+      ::-webkit-input-placeholder { /* WebKit browsers */
+            color:    $text-color;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    $text-color;
+            opacity:  1;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    $text-color;
+            opacity:  1;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color:    $text-color;
+        }
     }
   }
 
@@ -491,7 +513,11 @@ hr {
   @include button;
   display: block;
   text-align: center;
-  float: right;
+  float: left;
+    
+  height: 54px;
+  line-height: 54px;
+  margin-top: 8px;
 }
 
 .game-explanation {
@@ -505,7 +531,7 @@ hr {
   $grid-row-cells: 4;
   $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
   $tile-border-radius: 3px;
-  $game-container-margin-top: 17px;
+  $game-container-margin-top: 80px;
 
   html, body {
     font-size: 15px;
@@ -517,7 +543,7 @@ hr {
   }
 
   h1.title {
-    font-size: 27px;
+    font-size: 46px;
     margin-top: 15px;
   }
 
@@ -526,6 +552,10 @@ hr {
     margin: 0 auto;
   }
 
+  .scores-container {
+      width: $field-width;
+  }
+    
   .score-container, .best-container {
     margin-top: 0;
     padding: 15px 10px;
@@ -533,6 +563,7 @@ hr {
   }
 
   .heading {
+    margin-top: 10px;
     margin-bottom: 10px;
   }
 
@@ -542,6 +573,11 @@ hr {
     display: block;
     box-sizing: border-box;
     line-height: 1.65;
+      
+      margin-left: 10px;
+      margin-top: 14px;
+      float: right;
+      text-align: right;
   }
 
   .restart-button {
@@ -550,6 +586,12 @@ hr {
     display: block;
     box-sizing: border-box;
     margin-top: 2px;
+  }
+
+  #menu-navbar {
+      float: none !important;
+      position: relative !important;
+      margin: 0 0 0 20px !important;
   }
 
   // Render the game field at the right width
@@ -611,4 +653,105 @@ hr {
           }
         }
     }
+}
+
+#menu-navbar {
+    float: right;
+    position: relative;
+}
+
+.navbar {
+  text-align: center;
+  display: inline;
+    
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  border-radius: 3px;
+  
+  list-style: none;
+    
+  li {
+      background: $game-container-background;
+      color: $text-color;
+      
+      display: inline-block;
+      
+      cursor: pointer;
+      
+      position: relative;
+      padding: 15px 20px;
+      margin-right: -4px;
+      
+      font: bold 12pt;
+      
+      -webkit-transition:   all 0.3s;
+      -moz-transition:      all 0.3s;
+      -ms-transition:       all 0.3s;
+      -o-transition:        all 0.3s;
+      transition:           all 0.3s;
+      
+      a {
+           text-decoration: none;
+      }
+      
+      &:hover {
+          background: #555;
+          color: #fff;
+          
+          a {
+           background: #555;
+           color: #fff;
+           text-decoration: none;
+         }
+      }
+      
+      &.left {
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+      }
+      &.right {
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+      }
+      
+      ul {
+          padding: 0;
+          position: absolute;
+          top: 48px;
+          left: -30px;
+          width: 150px;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+          display: none;
+          opacity: 0;
+          visibility: hidden;
+          -webkit-transiton: opacity 0.3s;
+          -moz-transition: opacity 0.3s;
+          -ms-transition: opacity 0.3s;
+          -o-transition: opacity 0.3s;
+          -transition: opacity 0.3s;
+      
+          li { 
+              background: #555; 
+              color: #fff;
+              
+              display: block; 
+              
+              a {
+                  background: #555; 
+                  color: #fff;
+                  
+                  text-decoration: none;
+              }
+          }
+          li:hover { background: #666; }
+      }
+      
+      &:hover ul {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+  }
 }

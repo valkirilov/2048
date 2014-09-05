@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2048</title>
+
+    
+<!--  <link href="bower_components/bootstrap-sass/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />-->
+<!--  <link href="bower_components/bootstrap-sass/dist/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />-->
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    
+  
+</head>
+<body>
+  <div class="container">
+      
+    <ul id="menu-navbar" class="navbar">
+      <li class="left"><a href="index.html">Play</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li class="right"><a href="register.html">Register</a></li>
+    </ul>
+
+      
+    <div class="heading">
+      <h1 class="title">2048</h1>
+      <div class="above-game">
+        <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+<!--      <a class="restart-button">New Game</a>-->
+        </div>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message" style="display: block;">
+        <p style="margin-top: 40px;">Login to 2048</p>
+        <div class="lower">
+          To keep your <strong>highscores</strong> save ^_^
+          <br /><br />
+          <input type="email" id="login-email" class="lg" placeholder="Email address" required autofocus><br />
+          <input type="password" id="login-password" class="lg"  placeholder="Password" required><br />
+          
+          <a id="btn-login" class="save-score" click="loginButton()">Login</a> &nbsp; or 
+          <a href="register.html" class="retry-button">Register</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+    
+  <script src="libs/jquery-1.11.1.min.js"></script>
+  <script src="libs/jquery.cookie.js"></script>
+  
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    
+  <script src="js/database.js"></script>
+    
+  <script>
+      document.getElementById('btn-login').addEventListener('click', loginButton, false);
+  </script>
+    
+
+</body>
+</html>

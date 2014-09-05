@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <title>2048</title>
 
+    
+<!--  <link href="bower_components/bootstrap-sass/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />-->
+<!--  <link href="bower_components/bootstrap-sass/dist/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />-->
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
@@ -15,20 +18,31 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    
+  
 </head>
 <body>
   <div class="container">
+      
+    <ul id="menu-navbar" class="navbar">
+      <li class="left"><a href="index.html">Play</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li class="right"><a href="register.html">Register</a></li>
+    </ul>
+
+      
     <div class="heading">
       <h1 class="title">2048</h1>
-      <div class="scores-container">
-        <div class="score-container">0</div>
-        <div class="best-container">0</div>
-      </div>
+      <div class="above-game">
+        <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+<!--      <a class="restart-button">New Game</a>-->
+        </div>
     </div>
 
-    <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+    <div class="scores-container">
       <a class="restart-button">New Game</a>
+      <div class="score-container">0</div>
+      <div class="best-container">0</div>
     </div>
 
     <div class="game-container">
@@ -122,6 +136,8 @@
   <script src="libs/jquery.rdbhost.js"></script>
 <!--  <script src="libs/jquery.rdbhost.utils.js"></script>-->
   
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
 
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
@@ -132,7 +148,10 @@
   <script src="js/tile.js"></script>
   <script src="js/local_storage_manager.js"></script>
   <script src="js/highscores.js"></script>
+  <script src="js/database.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
+    
+  <script src="bower_components/bootstrap-sass/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
