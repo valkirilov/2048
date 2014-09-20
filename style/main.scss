@@ -69,6 +69,26 @@ h1.title {
   margin-bottom: 30px;
 }
 
+.profile-container {
+  width: $field-width;
+  height: auto;
+    
+  float: left;
+  text-align: left;
+  position: relative;
+    
+  margin-bottom: 30px;
+    
+  .avatar {
+      float: right;
+      position: relative;
+  }
+    
+  p {
+      margin: 0;
+  }
+}
+
 .score-container, .best-container {
   $height: 25px;
 
@@ -165,11 +185,14 @@ hr {
   display: inline-block;
   background: darken($game-container-background, 20%);
   border-radius: 3px;
+  border: none;
   padding: 0 20px;
   text-decoration: none;
   color: $bright-text-color;
   height: 40px;
   line-height: 42px;
+    
+  cursor: pointer;
 }
 
 // Game field mixin used to render CSS at different width
@@ -644,6 +667,14 @@ hr {
             padding-bottom: 5px;
             text-align: center;
         }
+        &.thin td {
+            height: 16px !important;    
+            padding: 0px;
+        }
+        
+        button {
+            width: 100%;
+        }
         
         tr.mine {
           td {
@@ -754,4 +785,15 @@ hr {
         visibility: visible;
       }
   }
+}
+
+button {
+    @include button;
+    
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+}
+button:hover {
+    @include button;
+    background: #555555;
 }

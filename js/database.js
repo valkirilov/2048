@@ -36,11 +36,27 @@ var firebaseAuth = new FirebaseSimpleLogin(firebaseRef, function(error, user) {
 });
 
 function registerButton() {
-    alert('reg');
-    var email = document.getElementById('login-email').value;
-    var password = document.getElementById('login-password').value;
+    var email = document.getElementById('register-email').value;
+    var password = document.getElementById('register-password').value;
+    var password2 = document.getElementById('register-password2').value;
     
-    register(email, password);
+    if (email.length ==0 || password.length == 0 || password2.length == 0) {
+        alert('Please type someting..');
+        return
+    }
+    
+    if (password != password2) {
+        alert('Your passwords are not equals..');
+        return
+    }
+    
+    register(email, password, function() {
+        console.log('Callback');
+    });
+    setTimeout(function() {
+        window.location = "login.html";
+    }, 3000);
+
 }
 
 function loginButton() {

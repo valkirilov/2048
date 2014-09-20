@@ -52,6 +52,19 @@ h1.title {
   text-align: right;
   margin-bottom: 30px; }
 
+.profile-container {
+  width: 500px;
+  height: auto;
+  float: left;
+  text-align: left;
+  position: relative;
+  margin-bottom: 30px; }
+  .profile-container .avatar {
+    float: right;
+    position: relative; }
+  .profile-container p {
+    margin: 0; }
+
 .score-container, .best-container {
   position: relative;
   display: inline-block;
@@ -187,11 +200,13 @@ hr {
       display: inline-block;
       background: #8f7a66;
       border-radius: 3px;
+      border: none;
       padding: 0 20px;
       text-decoration: none;
       color: #f9f6f2;
       height: 40px;
       line-height: 42px;
+      cursor: pointer;
       margin-left: 9px;
       border: none;
       border-radius: 3px;
@@ -523,11 +538,13 @@ hr {
   display: inline-block;
   background: #8f7a66;
   border-radius: 3px;
+  border: none;
   padding: 0 20px;
   text-decoration: none;
   color: #f9f6f2;
   height: 40px;
   line-height: 42px;
+  cursor: pointer;
   display: block;
   text-align: center;
   float: left;
@@ -636,11 +653,13 @@ hr {
         display: inline-block;
         background: #8f7a66;
         border-radius: 3px;
+        border: none;
         padding: 0 20px;
         text-decoration: none;
         color: #f9f6f2;
         height: 40px;
         line-height: 42px;
+        cursor: pointer;
         margin-left: 9px;
         border: none;
         border-radius: 3px;
@@ -809,6 +828,11 @@ hr {
     padding-top: 10px;
     padding-bottom: 5px;
     text-align: center; }
+  .game-highscores table.thin td {
+    height: 16px !important;
+    padding: 0px; }
+  .game-highscores table button {
+    width: 100%; }
   .game-highscores table tr.mine td {
     background: #9f8a77;
     color: #dbd9ce;
@@ -885,3 +909,30 @@ hr {
       display: block;
       opacity: 1;
       visibility: visible; }
+
+button {
+  display: inline-block;
+  background: #8f7a66;
+  border-radius: 3px;
+  border: none;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  cursor: pointer;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px; }
+
+button:hover {
+  display: inline-block;
+  background: #8f7a66;
+  border-radius: 3px;
+  border: none;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  cursor: pointer;
+  background: #555555; }

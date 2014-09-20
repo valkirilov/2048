@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2048</title>
+
+    
+<!--  <link href="bower_components/bootstrap-sass/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />-->
+<!--  <link href="bower_components/bootstrap-sass/dist/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />-->
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    
+  
+</head>
+<body>
+  <div class="container">
+      
+    <ul id="menu-navbar" class="navbar">
+      <li class="left">XP: <span id="field-xp"></span></li>
+      <li class="right" id="btn-logout">Logout</li>
+    </ul>
+
+      
+    <div class="heading">
+      <h1 class="title">2048</h1>
+      <div class="above-game">
+        <p class="game-intro">Rule and build your own <strong>2048 Kingdom!</strong></p>
+<!--      <a class="restart-button">New Game</a>-->
+        </div>
+    </div>
+
+    <div class="profile-container">
+      <div class="tile tile-2048 tile-new avatar"><div class="tile-inner">2048</div></div>
+      <br />
+      <p><strong>USERNAME</strong> - Level 2048</p>
+      <table>
+          <tr>
+              <td><strong>XP:</strong></td>
+              <td width="10px"></td>
+              <td>12 506</td>
+              <td width="50px"></td>
+              <td><strong>Fights won:</strong></td>
+              <td width="10px"></td>
+              <td>0</td>
+          </tr>
+          <tr>
+              <td><strong>Games:</strong></td>
+              <td></td>
+              <td>21</td>
+              <td></td>
+              <td><strong>Fights lost:</strong></td>
+              <td></td>
+              <td>0</td>
+          </tr>
+      </table>
+      
+    </div>
+
+    <br />
+    <h2 class="important">Your Kingdom:</h2>
+    <div class="game-container">
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell-small"></div>
+          <div class="grid-cell-small"></div>
+          <div class="grid-cell-small"></div>
+          <div class="grid-cell-small"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+          <div class="tile tile-2 tile-position-1-1"><div class="tile-inner">2</div></div>
+          <div class="tile tile-8 tile-position-1-2"><div class="tile-inner">8</div></div>
+          <div class="tile tile-2 tile-position-1-3"><div class="tile-inner">2</div></div>
+          <div class="tile tile-4 tile-position-1-4 tile-new"><div class="tile-inner">4</div></div>
+          <div class="tile tile-8 tile-position-2-1"><div class="tile-inner">8</div></div>
+          <div class="tile tile-16 tile-position-2-2"><div class="tile-inner">16</div></div>
+          <div class="tile tile-4 tile-position-2-3"><div class="tile-inner">4</div></div>
+          <div class="tile tile-2 tile-position-2-4"><div class="tile-inner">2</div></div>
+          <div class="tile tile-4 tile-position-3-1"><div class="tile-inner">4</div></div>
+          <div class="tile tile-32 tile-position-3-2"><div class="tile-inner">32</div></div>
+          <div class="tile tile-64 tile-position-3-3"><div class="tile-inner">64</div></div>
+          <div class="tile tile-8 tile-position-3-4"><div class="tile-inner">8</div></div>
+          <div class="tile tile-2 tile-position-4-1"><div class="tile-inner">2</div></div>
+          <div class="tile tile-16 tile-position-4-2"><div class="tile-inner">16</div></div>
+          <div class="tile tile-32 tile-position-4-3"><div class="tile-inner">32</div></div>
+          <div class="tile tile-2 tile-position-4-4"><div class="tile-inner">2</div></div>
+          <div class="tile tile-2 tile-position-4-4"><div class="tile-inner">2</div></div>
+          <div class="tile tile-4 tile-position-4-4 tile-merged"><div class="tile-inner">4</div></div>
+      </div>
+    </div>
+
+    <br /><br /><br />
+    <div class="game-highscores">
+      <h2 class="important">Buildings:</h2>
+      <table id="table-highscores" class="thin">
+        <thead>
+          <td>Level</td>
+          <td></td>
+          <td>Coast:</td>
+          <td></td>
+        </thead>
+          <tr>
+            <td>1</td>
+            <td>Kingdom</td>
+            <td>2048</td>
+            <td><button type="button">Build</button></td>
+          </tr>
+          <tr>
+            <td>0</td>  
+            <td>Defence wall 1</td>
+            <td>2</td>
+            <td><button type="button">Build</button></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>Defence wall 2</td>
+            <td>2</td>
+            <td><button type="button">Build</button></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>Attacker tower 1</td>
+            <td>2</td>
+            <td><button type="button">Build</button></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>Attacker tower 2</td>
+            <td>2</td>
+            <td><button type="button">Build</button></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>Troops building</td>
+            <td>2</td>
+            <td><button type="button">Build</button></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>Storage building</td>
+            <td>2</td>
+            <td><button type="button">Build</button></td>
+          </tr>
+      </table>
+    </div>
+      
+    <br /><br /><br />
+    <div class="game-highscores">
+      <h2 class="important">Troops:</h2>
+      <table id="table-highscores">
+        <thead>
+          <td>#</td>
+          <td>Name:</td>
+          <td>Score: </td>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+      
+    <p class="game-explanation">
+      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+    </p>
+    <hr>
+    <p>
+      This version of the game has got some <strong>extensions</strong> and <strong>improvements</strong>:
+      <ul>
+        <li><strong>HighScores</strong> for the top results of the best player</li>
+        <li>Different color filling for the tiles after 512, they are getting <strong>greener</strong> :)</li>
+      </ul>
+    
+      <br />
+      
+      <strong class="important">Note:</strong> This site is the <strong>NOT</strong> the official version of 2048. 
+      If you want you can play it on <a href="http://git.io/2048">http://git.io/2048.</a><br />
+      
+    </p>
+    <hr>
+    <p>
+    Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> 
+    Modified by <a href="http://github.com/valkirilov" target="_blank">Valentin Kirilov.</a> 
+    Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+    </p>
+  </div>
+    
+  <script src="libs/jquery-1.11.1.min.js"></script>
+  <script src="libs/jquery.cookie.js"></script>
+  <script src="libs/jquery.rdbhost.js"></script>
+<!--  <script src="libs/jquery.rdbhost.utils.js"></script>-->
+  
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+
+  <script src="js/bind_polyfill.js"></script>
+  <script src="js/classlist_polyfill.js"></script>
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/highscores.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+    
+  <script src="bower_components/bootstrap-sass/dist/js/bootstrap.min.js"></script>
+    
+  <script>
+      document.getElementById('btn-logout').addEventListener('click', logout, false);
+  </script>
+
+    
+</body>
+</html>
