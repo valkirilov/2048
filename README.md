@@ -4,7 +4,9 @@ I really like the game and I made its 7826's fork. My changes are really small b
 
 Here is a screenshot with my preferences for the game and of course it's online and you can play it [here](http://valkirilov.github.io/2048/). And of course I should be thankfull to [Gabriele Cirulli](https://github.com/gabrielecirulli) who entertain the world with his work.
 <p align="center">
+  <a href="http://valkirilov.github.io/2048/" target="_blank">
   <img src="https://raw.githubusercontent.com/valkirilov/2048/gh-pages/screens/v2-highscores.png" alt="Screenshot"/>
+  </a>
 </p>
 
 And below is the original READMe from the creator :)
